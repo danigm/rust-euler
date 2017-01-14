@@ -3,4 +3,8 @@ name = "euler"
 version = "0.1.0"
 authors = ["Daniel García Moreno <danigm@wadobo.com>"]
 
+[lib]
+name = "problems"
+path = "src/lib.rs"
+
 [dependencies]
