@@ -41,6 +41,16 @@ impl Iterator for Fib {
 }
 
 /// Solves the problem for fib numbers minor than 4M
+///
+/// Examples
+///
+/// ```
+/// extern crate problems;
+///
+/// fn main() {
+///     assert_eq!(4613732, problems::p2::solve());
+/// }
+/// ```
 pub fn solve() -> u32 {
     let sol = Fib::new(4*1000*1000)
         .filter(|&x| x % 2 == 0)

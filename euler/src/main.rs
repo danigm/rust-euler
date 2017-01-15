@@ -14,6 +14,7 @@ fn main() {
     match argn {
         1 => println!("Solution: {}", problems::p1::solve()),
         2 => println!("Solution: {}", problems::p2::solve()),
+        3 => println!("Solution: {}", problems::p3::solve()),
         x @ _ => println!("Problem {} not implemented", x),
     }
 }
