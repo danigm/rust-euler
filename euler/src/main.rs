@@ -2,8 +2,6 @@ extern crate problems;
 
 use std::env;
 
-use problems::p1;
-
 fn main() {
     if env::args().count() != 2 {
         println!("Introduce the problem number");
@@ -14,7 +12,8 @@ fn main() {
     let argn: i32 = arg.parse().ok().unwrap_or(1);
 
     match argn {
-        1 => p1::solve(),
+        1 => println!("Solution: {}", problems::p1::solve()),
+        2 => println!("Solution: {}", problems::p2::solve()),
         x @ _ => println!("Problem {} not implemented", x),
     }
 }

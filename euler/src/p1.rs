@@ -25,6 +25,6 @@ pub fn multiples(n: i32) -> i32 {
 }
 
 /// Solves the problem for 1000
-pub fn solve() {
-    println!("Solution: {}", multiples(1000));
+pub fn solve() -> i32 {
+    multiples(1000)
 }
