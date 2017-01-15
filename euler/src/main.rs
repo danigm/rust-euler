@@ -16,6 +16,7 @@ fn main() {
         2 => println!("Solution: {}", problems::p2::solve()),
         3 => println!("Solution: {}", problems::p3::solve()),
         4 => println!("Solution: {}", problems::p4::solve()),
+        5 => println!("Solution: {}", problems::p5::solve()),
         x @ _ => println!("Problem {} not implemented", x),
     }
 }
