@@ -43,24 +43,18 @@ pub fn divisors(n: i32) -> Vec<i32> {
 /// assert_eq!(6, problems::basic_maths::gcd(18, 84));
 /// assert_eq!(2, problems::basic_maths::gcd(4, 6));
 /// ```
-pub fn gcd(n1: i32, n2: i32) -> i32 {
-    let mut ds = divisors(n1);
-    let ds2 = ds.clone();
-    let d = divisors(n2);
-
-    for j in ds2.iter() {
-        if !d.contains(j) {
-            let p = ds.iter().position(|x| x == j);
-            if p.is_some() {
-                ds.remove(p.unwrap());
-            }
+fn gcd(n1: i32, n2: i32) -> i32 {
+    // algorithm getted from the book "Why Rust?", by Jim Blandy
+    let mut n = n1;
+    let mut m = n2;
+    assert!(n != 0 && m != 0);
+    while m != 0 {
+        if m < n {
+            let t = m; m = n; n = t;
         }
+        m = m % n;
     }
-
-    match ds.iter().max() {
-        Some(x) => return *x,
-        None => return 1,
-    }
+    n
 }
 
 /// least common multiple
