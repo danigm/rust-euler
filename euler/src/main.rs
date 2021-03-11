@@ -20,6 +20,8 @@ fn main() {
         6 => println!("Solution: {}", problems::p6::solve()),
         7 => println!("Solution: {}", problems::p7::solve()),
         8 => println!("Solution: {}", problems::p8::solve()),
+        9 => println!("Solution: {}", problems::p9::solve()),
+        10 => println!("Solution: {}", problems::p10::solve()),
         x @ _ => println!("Problem {} not implemented", x),
     }
 }

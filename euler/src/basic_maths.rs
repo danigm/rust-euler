@@ -78,3 +78,27 @@ pub fn gcdv(v: &Vec<i32>) -> i32 {
 pub fn lcmv(v: &Vec<i32>) -> i32 {
     v.iter().fold(1, |g, x| lcm(g, *x))
 }
+
+pub fn eratostenes(n: u64) -> bool {
+    match n {
+        1 => false,
+        i if i < 4 => true, // 2, 3 son primos
+        i if i % 2 == 0 => false, // los pares no son primos
+        i if i < 9 => true, // 4, 6, 8 ya están excluidos
+        i if i % 3 == 0 => false, //multiplos de 3
+        _ => {
+            let r = f64::sqrt(n as f64) as u64;
+            let mut f = 5;
+            while f <= r {
+                if n % f == 0 {
+                    return false;
+                }
+                if n % (f+2) == 0 {
+                    return false;
+                }
+                f += 6;
+            }
+            true
+        },
+    }
+}

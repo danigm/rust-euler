@@ -22,6 +22,35 @@ pub fn solve() -> i32 {
     let mut primes = vec!(2);
     let mut isprime = true;
     let x = 10001;
+    let mut nprimes = 1;
+    let mut sqrt;
+    while nprimes < x {
+        sqrt = (n as f32).sqrt() as i32;
+        for p in &primes {
+            if p > &sqrt {
+                isprime = true;
+                break;
+            }
+            if n % p == 0 {
+                isprime = false;
+                break;
+            }
+        }
+        if isprime {
+            nprimes += 1;
+            primes.push(n);
+        }
+        n += 2;
+        isprime = true;
+    }
+    primes[x - 1]
+}
+
+pub fn solve1() -> i32 {
+    let mut n = 3;
+    let mut primes = vec!(2);
+    let mut isprime = true;
+    let x = 10001;
     while primes.len() < x {
         for p in &primes {
             if n % p == 0 {
